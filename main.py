@@ -21,7 +21,6 @@ plt.figure()
 plt.plot()
 plt.title('BBC distribution')
 plt.bar(names, values)
-
 plt.savefig('BBC-distribution.pdf')
 
 corpus = datasets.load_files('./BBC', encoding='latin1')
@@ -40,10 +39,37 @@ cr = classification_report(testY, predict, target_names=names)
 acc = accuracy_score(testY, predict)
 f1 = f1_score(testY, predict, average=None)
 
-##do prior probability on test set (?)
+# do prior probability on test set (?)
+businessN = 0
+entertainmentN = 0
+politicsN = 0
+sportN = 0
+techN = 0
+
+for category in testY:
+    if category == 0:
+        businessN += 1
+    elif category == 1:
+        entertainmentN += 1
+    elif category == 2:
+        politicsN += 1
+    elif category == 3:
+        sportN += 1
+    elif category == 4:
+        techN += 1
+
+total = len(testY)
+businessPercentage = "{:.2%}".format(businessN/total)
+entertainmentPercentage = "{:.2%}".format(entertainmentN/total)
+politicsPercentage = "{:.2%}".format(politicsN/total)
+sportPercentage = "{:.2%}".format(sportN/total)
+techPercentage = "{:.2%}".format(techN/total)
+
+print("Prior Probability:")
+print("Business: " + businessPercentage)
+print("Entertainment: " + entertainmentPercentage)
+print("Politics: " + politicsPercentage)
+print("Sport: " + sportPercentage)
+print("Tech: " + techPercentage)
 
 vocabulary = len(vec.vocabulary_)
-
-
-
-
