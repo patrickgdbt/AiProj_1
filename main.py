@@ -59,11 +59,11 @@ for category in testY:
         techN += 1
 
 total = len(testY)
-businessPercentage = "{:.2%}".format(businessN/total)
-entertainmentPercentage = "{:.2%}".format(entertainmentN/total)
-politicsPercentage = "{:.2%}".format(politicsN/total)
-sportPercentage = "{:.2%}".format(sportN/total)
-techPercentage = "{:.2%}".format(techN/total)
+businessPercentage = "{:.2%}".format(businessN / total)
+entertainmentPercentage = "{:.2%}".format(entertainmentN / total)
+politicsPercentage = "{:.2%}".format(politicsN / total)
+sportPercentage = "{:.2%}".format(sportN / total)
+techPercentage = "{:.2%}".format(techN / total)
 
 print("Prior Probability:")
 print("Business: " + businessPercentage)
