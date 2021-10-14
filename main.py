@@ -73,3 +73,22 @@ print("Sport: " + sportPercentage)
 print("Tech: " + techPercentage)
 
 vocabulary = len(vec.vocabulary_)
+print(vocabulary)
+
+businessWordTokens = matrix[y == 0].sum()
+entertainmentWordTokens = matrix[y == 1].sum()
+politicsWordTokens = matrix[y == 2].sum()
+sportWordTokens = matrix[y == 3].sum()
+techWordTokens = matrix[y == 4].sum()
+
+print(businessWordTokens)
+print(entertainmentWordTokens)
+print(politicsWordTokens)
+print(sportWordTokens)
+print(techWordTokens)
+
+entireCorpusWordTokens = businessWordTokens + entertainmentWordTokens + politicsWordTokens + sportWordTokens + techWordTokens
+
+print(entireCorpusWordTokens)
+
+count = 0
