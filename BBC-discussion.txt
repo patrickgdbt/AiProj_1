@@ -1,0 +1,6 @@
+a)
+b) In question 8, the results are the same as in step 7. This makes sense because we did not change anything, and 
+   a Naive Bayes classifier is simple statistics. If we do the same calculation, with the same numbers, we will 
+   obtain the same result. In steps 9 and 10, we adjust the smoothing value, meaning that we change the probabilites
+   of different words appearing in given text. As such we are using the same equations as in step 7, but with different 
+   numbers, resulting in slightly different results. 

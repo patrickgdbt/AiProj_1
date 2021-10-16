@@ -1,0 +1,9 @@
+8) Certain models give us the same results, and others do not. The naive bayes, decision tree and perceptron classifiers
+   all give the same results all the time. This is because they are all simple mathematial equations. We are giving the 
+   same numbers to the probability, entropy and actviation functions. As such, we always get the same results.
+
+   The multi-layered perceptron classifier however, does nto give us the same results every time. This is because the
+   weights re-initialized randomly everytime. As such, we are no longer using the same numbers in the same equations, 
+   which gives us different results.
+
+   ##Check if perceptron has random weights, check if mlp has random weights
