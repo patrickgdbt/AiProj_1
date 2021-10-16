@@ -1,41 +1,261 @@
 ###################################################################
                Multinomial default values, try 1
 ###################################################################
+
 (b): confusion matrix
-[[ 84   0   3   0   2]
- [  0  75   1   0   1]
- [  0   0  86   0   0]
- [  0   0   0 108   0]
- [  0   1   0   0  84]]
+[[ 98   0   4   0   4]
+ [  1  63   1   0   1]
+ [  1   0  72   0   0]
+ [  0   0   0 102   0]
+ [  0   0   0   0  98]]
+
 (c): classification report
                precision    recall  f1-score   support
 
-     business       1.00      0.94      0.97        89
-entertainment       0.99      0.97      0.98        77
-     politics       0.96      1.00      0.98        86
-        sport       1.00      1.00      1.00       108
-         tech       0.97      0.99      0.98        85
+     business       0.98      0.92      0.95       106
+entertainment       1.00      0.95      0.98        66
+     politics       0.94      0.99      0.96        73
+        sport       1.00      1.00      1.00       102
+         tech       0.95      1.00      0.98        98
 
-     accuracy                           0.98       445
-    macro avg       0.98      0.98      0.98       445
- weighted avg       0.98      0.98      0.98       445
+     accuracy                           0.97       445
+    macro avg       0.97      0.97      0.97       445
+ weighted avg       0.97      0.97      0.97       445
+
 
 (d): accuracy, macro f1, weighted f1
-accuracy: 0.9820224719101124
-macro f1: 0.9811014672155876
-weighted f1: 0.9819924766350097
+accuracy: 0.9730337078651685
+macro f1: 0.9726649749671152
+weighted f1: 0.972947582619854
+
 (e): prior probabilities
-Business: 20.00% 
-Entertainment: 17.30% 
-Politics: 19.33% 
-Sport: 24.27% 
-Tech: 19.10% 
+Business: 23.82% 
+Entertainment: 14.83% 
+Politics: 16.40% 
+Sport: 22.92% 
+Tech: 22.02% 
+
 (f): size of vocabulary 
 Vocabulary size: 29421
+
 (g): number of word tokens in each classBusiness: 164663 
 Entertainment: 124893 
 Politics: 185208 
 Sport: 162953 
 Tech: 198640 
+
 (h): number of word tokens in entire corpus
 Number of word tokens in corpus: 836357
+
+(i): number and percentage of words with frequency 0 per class
+Business: 17538 59.61%
+Entertainment: 17746 60.32%
+Politics: 18201 61.86%
+Sport: 18850 64.07%
+Tech: 17323 58.88%
+
+(j): number and percentage of words with frequency of 1 in the entire corpus
+Number: 10005, Percentage: 34.01%
+
+(k): log probability of 2 favourite words (people, american)
+People: 2.666310915583528
+American: 4.8214038429252986
+
+
+
+
+###################################################################
+               Multinomial default values, try 2
+###################################################################
+
+(b): confusion matrix
+[[ 98   0   4   0   4]
+ [  1  63   1   0   1]
+ [  1   0  72   0   0]
+ [  0   0   0 102   0]
+ [  0   0   0   0  98]]
+
+(c): classification report
+               precision    recall  f1-score   support
+
+     business       0.98      0.92      0.95       106
+entertainment       1.00      0.95      0.98        66
+     politics       0.94      0.99      0.96        73
+        sport       1.00      1.00      1.00       102
+         tech       0.95      1.00      0.98        98
+
+     accuracy                           0.97       445
+    macro avg       0.97      0.97      0.97       445
+ weighted avg       0.97      0.97      0.97       445
+
+
+(d): accuracy, macro f1, weighted f1
+accuracy: 0.9730337078651685
+macro f1: 0.9726649749671152
+weighted f1: 0.972947582619854
+
+(e): prior probabilities
+Business: 23.82% 
+Entertainment: 14.83% 
+Politics: 16.40% 
+Sport: 22.92% 
+Tech: 22.02% 
+
+(f): size of vocabulary 
+Vocabulary size: 29421
+
+(g): number of word tokens in each classBusiness: 164663 
+Entertainment: 124893 
+Politics: 185208 
+Sport: 162953 
+Tech: 198640 
+
+(h): number of word tokens in entire corpus
+Number of word tokens in corpus: 836357
+
+(i): number and percentage of words with frequency 0 per class
+Business: 17538 59.61%
+Entertainment: 17746 60.32%
+Politics: 18201 61.86%
+Sport: 18850 64.07%
+Tech: 17323 58.88%
+
+(j): number and percentage of words with frequency of 1 in the entire corpus
+Number: 10005, Percentage: 34.01%
+
+(k): log probability of 2 favourite words (people, american)
+People: 2.666310915583528
+American: 4.8214038429252986
+
+
+
+
+###################################################################
+     Multinomial default values, try 3 with smoothing = 0.001
+###################################################################
+
+(b): confusion matrix
+[[ 96   1   4   0   5]
+ [  2  63   1   0   0]
+ [  1   0  72   0   0]
+ [  0   0   0 102   0]
+ [  0   0   0   0  98]]
+
+(c): classification report
+               precision    recall  f1-score   support
+
+     business       0.97      0.91      0.94       106
+entertainment       0.98      0.95      0.97        66
+     politics       0.94      0.99      0.96        73
+        sport       1.00      1.00      1.00       102
+         tech       0.95      1.00      0.98        98
+
+     accuracy                           0.97       445
+    macro avg       0.97      0.97      0.97       445
+ weighted avg       0.97      0.97      0.97       445
+
+
+(d): accuracy, macro f1, weighted f1
+accuracy: 0.9685393258426966
+macro f1: 0.968188102638776
+weighted f1: 0.968290940684146
+
+(e): prior probabilities
+Business: 23.82% 
+Entertainment: 14.83% 
+Politics: 16.40% 
+Sport: 22.92% 
+Tech: 22.02% 
+
+(f): size of vocabulary 
+Vocabulary size: 29421
+
+(g): number of word tokens in each classBusiness: 164663 
+Entertainment: 124893 
+Politics: 185208 
+Sport: 162953 
+Tech: 198640 
+
+(h): number of word tokens in entire corpus
+Number of word tokens in corpus: 836357
+
+(i): number and percentage of words with frequency 0 per class
+Business: 17538 59.61%
+Entertainment: 17746 60.32%
+Politics: 18201 61.86%
+Sport: 18850 64.07%
+Tech: 17323 58.88%
+
+(j): number and percentage of words with frequency of 1 in the entire corpus
+Number: 10005, Percentage: 34.01%
+
+(k): log probability of 2 favourite words (people, american)
+People: 2.666310915583528
+American: 4.8214038429252986
+
+
+
+
+###################################################################
+      Multinomial default values, try 4 with smoothing = 0.9
+###################################################################
+
+(b): confusion matrix
+[[ 98   0   4   0   4]
+ [  1  63   1   0   1]
+ [  1   0  72   0   0]
+ [  0   0   0 102   0]
+ [  0   0   0   0  98]]
+
+(c): classification report
+               precision    recall  f1-score   support
+
+     business       0.98      0.92      0.95       106
+entertainment       1.00      0.95      0.98        66
+     politics       0.94      0.99      0.96        73
+        sport       1.00      1.00      1.00       102
+         tech       0.95      1.00      0.98        98
+
+     accuracy                           0.97       445
+    macro avg       0.97      0.97      0.97       445
+ weighted avg       0.97      0.97      0.97       445
+
+
+(d): accuracy, macro f1, weighted f1
+accuracy: 0.9730337078651685
+macro f1: 0.9726649749671152
+weighted f1: 0.972947582619854
+
+(e): prior probabilities
+Business: 23.82% 
+Entertainment: 14.83% 
+Politics: 16.40% 
+Sport: 22.92% 
+Tech: 22.02% 
+
+(f): size of vocabulary 
+Vocabulary size: 29421
+
+(g): number of word tokens in each classBusiness: 164663 
+Entertainment: 124893 
+Politics: 185208 
+Sport: 162953 
+Tech: 198640 
+
+(h): number of word tokens in entire corpus
+Number of word tokens in corpus: 836357
+
+(i): number and percentage of words with frequency 0 per class
+Business: 17538 59.61%
+Entertainment: 17746 60.32%
+Politics: 18201 61.86%
+Sport: 18850 64.07%
+Tech: 17323 58.88%
+
+(j): number and percentage of words with frequency of 1 in the entire corpus
+Number: 10005, Percentage: 34.01%
+
+(k): log probability of 2 favourite words (people, american)
+People: 2.666310915583528
+American: 4.8214038429252986
+
