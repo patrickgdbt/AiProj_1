@@ -2,34 +2,34 @@
                Multinomial default values, try 1
 ###################################################################
 (b): confusion matrix
-[[ 95   0   3   0   2]
- [  0  67   1   0   1]
- [  2   1  81   0   0]
- [  0   0   0 101   0]
- [  0   1   1   0  89]]
+[[ 84   0   3   0   2]
+ [  0  75   1   0   1]
+ [  0   0  86   0   0]
+ [  0   0   0 108   0]
+ [  0   1   0   0  84]]
 (c): classification report
                precision    recall  f1-score   support
 
-     business       0.98      0.95      0.96       100
-entertainment       0.97      0.97      0.97        69
-     politics       0.94      0.96      0.95        84
-        sport       1.00      1.00      1.00       101
-         tech       0.97      0.98      0.97        91
+     business       1.00      0.94      0.97        89
+entertainment       0.99      0.97      0.98        77
+     politics       0.96      1.00      0.98        86
+        sport       1.00      1.00      1.00       108
+         tech       0.97      0.99      0.98        85
 
-     accuracy                           0.97       445
-    macro avg       0.97      0.97      0.97       445
- weighted avg       0.97      0.97      0.97       445
+     accuracy                           0.98       445
+    macro avg       0.98      0.98      0.98       445
+ weighted avg       0.98      0.98      0.98       445
 
 (d): accuracy, macro f1, weighted f1
-accuracy: 0.9730337078651685
-macro f1: 0.9722200539857537
-weighted f1: 0.973050383220965
+accuracy: 0.9820224719101124
+macro f1: 0.9811014672155876
+weighted f1: 0.9819924766350097
 (e): prior probabilities
-Business: 22.47% 
-Entertainment: 15.51% 
-Politics: 18.88% 
-Sport: 22.70% 
-Tech: 20.45% 
+Business: 20.00% 
+Entertainment: 17.30% 
+Politics: 19.33% 
+Sport: 24.27% 
+Tech: 19.10% 
 (f): size of vocabulary 
 Vocabulary size: 29421
 (g): number of word tokens in each classBusiness: 164663 

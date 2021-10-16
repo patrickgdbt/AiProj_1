@@ -1,130 +1,194 @@
 Step 7:
 --------------------------------------------
-a) <class 'sklearn.naive_bayes.MultinomialNB'> with default parameters
+a) <class 'sklearn.naive_bayes.MultinomialNB'> with default parameter
 b) Confusion Matrix:
- [[ 2  1  0  1  2]
- [ 0  1  0  3  0]
- [ 0  0  0  2  1]
- [ 0  0  0  5  7]
- [ 0  0  0  4 21]]
+ [[ 4  0  0  0  0]
+ [ 0  0  0  5  0]
+ [ 0  0  0  1  2]
+ [ 0  0  0  9  5]
+ [ 0  0  0  6 18]]
 c)
               precision    recall  f1-score   support
 
-       drugA       1.00      0.33      0.50         6
-       drugB       0.50      0.25      0.33         4
+       drugA       1.00      1.00      1.00         4
+       drugB       0.00      0.00      0.00         5
        drugC       0.00      0.00      0.00         3
-       drugX       0.33      0.42      0.37        12
-       drugY       0.68      0.84      0.75        25
+       drugX       0.43      0.64      0.51        14
+       drugY       0.72      0.75      0.73        24
 
-    accuracy                           0.58        50
-   macro avg       0.50      0.37      0.39        50
-weighted avg       0.58      0.58      0.55        50
+    accuracy                           0.62        50
+   macro avg       0.43      0.48      0.45        50
+weighted avg       0.55      0.62      0.58        50
 d)
-Accuracy: 0.58
-F1 Macro Average: 0.3907407407407407
-F1 Weighted Average: 0.5505555555555556
+Accuracy: 0.62
+F1 Macro Average: 0.4497959183673469
+F1 Weighted Average: 0.5766530612244898
 --------------------------------------------
-a) <class 'sklearn.tree._classes.DecisionTreeClassifier'> with default parameters
+a) <class 'sklearn.tree._classes.DecisionTreeClassifier'> with default parameter
 b) Confusion Matrix:
- [[ 6  0  0  0  0]
- [ 0  4  0  0  0]
+ [[ 4  0  0  0  0]
+ [ 2  3  0  0  0]
  [ 0  0  3  0  0]
- [ 0  0  0 11  1]
- [ 0  0  0  0 25]]
+ [ 0  0  0 14  0]
+ [ 0  0  0  0 24]]
 c)
               precision    recall  f1-score   support
 
-       drugA       1.00      1.00      1.00         6
-       drugB       1.00      1.00      1.00         4
+       drugA       0.67      1.00      0.80         4
+       drugB       1.00      0.60      0.75         5
        drugC       1.00      1.00      1.00         3
-       drugX       1.00      0.92      0.96        12
-       drugY       0.96      1.00      0.98        25
+       drugX       1.00      1.00      1.00        14
+       drugY       1.00      1.00      1.00        24
 
-    accuracy                           0.98        50
-   macro avg       0.99      0.98      0.99        50
-weighted avg       0.98      0.98      0.98        50
+    accuracy                           0.96        50
+   macro avg       0.93      0.92      0.91        50
+weighted avg       0.97      0.96      0.96        50
 d)
-Accuracy: 0.98
-F1 Macro Average: 0.9873827791986359
-F1 Weighted Average: 0.9797612958226769
+Accuracy: 0.96
+F1 Macro Average: 0.9099999999999999
+F1 Weighted Average: 0.9590000000000001
 --------------------------------------------
-a) <class 'sklearn.linear_model._perceptron.Perceptron'> with default parameters
+a) DecisionTreeClassifier {'criterion': 'entropy', 'max_depth': 5, 'min_samples_split': 2}
 b) Confusion Matrix:
- [[ 4  0  0  0  2]
- [ 4  0  0  0  0]
- [ 2  0  0  0  1]
- [ 1  0  0  0 11]
- [ 0  0  0  0 25]]
+ [[ 4  0  0  0  0]
+ [ 2  3  0  0  0]
+ [ 0  0  3  0  0]
+ [ 0  0  0 14  0]
+ [ 0  0  0  0 24]]
 c)
               precision    recall  f1-score   support
 
-       drugA       0.36      0.67      0.47         6
-       drugB       0.00      0.00      0.00         4
-       drugC       0.00      0.00      0.00         3
-       drugX       0.00      0.00      0.00        12
-       drugY       0.64      1.00      0.78        25
+       drugA       0.67      1.00      0.80         4
+       drugB       1.00      0.60      0.75         5
+       drugC       1.00      1.00      1.00         3
+       drugX       1.00      1.00      1.00        14
+       drugY       1.00      1.00      1.00        24
 
-    accuracy                           0.58        50
-   macro avg       0.20      0.33      0.25        50
-weighted avg       0.36      0.58      0.45        50
+    accuracy                           0.96        50
+   macro avg       0.93      0.92      0.91        50
+weighted avg       0.97      0.96      0.96        50
 d)
-Accuracy: 0.58
-F1 Macro Average: 0.25036764705882353
-F1 Weighted Average: 0.4470955882352942
+Accuracy: 0.96
+F1 Macro Average: 0.9099999999999999
+F1 Weighted Average: 0.9590000000000001
 --------------------------------------------
-a) <class 'sklearn.neural_network._multilayer_perceptron.MLPClassifier'> with default parameters
+a) <class 'sklearn.linear_model._perceptron.Perceptron'> with default parameter
 b) Confusion Matrix:
- [[ 4  1  0  1  0]
- [ 0  1  0  3  0]
- [ 0  0  0  2  1]
- [ 1  0  0  5  6]
- [ 0  0  0  1 24]]
+ [[ 4  0  0  0  0]
+ [ 4  1  0  0  0]
+ [ 1  0  0  0  2]
+ [ 7  2  0  0  5]
+ [ 8  0  0  0 16]]
 c)
               precision    recall  f1-score   support
 
-       drugA       0.80      0.67      0.73         6
-       drugB       0.50      0.25      0.33         4
+       drugA       0.17      1.00      0.29         4
+       drugB       0.33      0.20      0.25         5
        drugC       0.00      0.00      0.00         3
-       drugX       0.42      0.42      0.42        12
-       drugY       0.77      0.96      0.86        25
+       drugX       0.00      0.00      0.00        14
+       drugY       0.70      0.67      0.68        24
 
-    accuracy                           0.68        50
-   macro avg       0.50      0.46      0.47        50
-weighted avg       0.62      0.68      0.64        50
+    accuracy                           0.42        50
+   macro avg       0.24      0.37      0.24        50
+weighted avg       0.38      0.42      0.37        50
 d)
-Accuracy: 0.68
-F1 Macro Average: 0.46688311688311684
-F1 Weighted Average: 0.6425108225108224
+Accuracy: 0.42
+F1 Macro Average: 0.24331306990881457
+F1 Weighted Average: 0.3746656534954407
+--------------------------------------------
+a) <class 'sklearn.neural_network._multilayer_perceptron.MLPClassifier'> with default parameter
+b) Confusion Matrix:
+ [[ 4  0  0  0  0]
+ [ 0  0  0  5  0]
+ [ 0  0  0  1  2]
+ [ 0  1  0  8  5]
+ [ 0  0  0  5 19]]
+c)
+              precision    recall  f1-score   support
+
+       drugA       1.00      1.00      1.00         4
+       drugB       0.00      0.00      0.00         5
+       drugC       0.00      0.00      0.00         3
+       drugX       0.42      0.57      0.48        14
+       drugY       0.73      0.79      0.76        24
+
+    accuracy                           0.62        50
+   macro avg       0.43      0.47      0.45        50
+weighted avg       0.55      0.62      0.58        50
+d)
+Accuracy: 0.62
+F1 Macro Average: 0.448969696969697
+F1 Weighted Average: 0.5805575757575758
+--------------------------------------------
+a) MLPClassifier {'activation': 'tanh', 'hidden_layer_sizes': (50, 50), 'solver': 'adam'}
+b) Confusion Matrix:
+ [[ 4  0  0  0  0]
+ [ 2  3  0  0  0]
+ [ 0  0  1  2  0]
+ [ 0  0  0 13  1]
+ [ 1  1  0  0 22]]
+c)
+              precision    recall  f1-score   support
+
+       drugA       0.57      1.00      0.73         4
+       drugB       0.75      0.60      0.67         5
+       drugC       1.00      0.33      0.50         3
+       drugX       0.87      0.93      0.90        14
+       drugY       0.96      0.92      0.94        24
+
+    accuracy                           0.86        50
+   macro avg       0.83      0.76      0.75        50
+weighted avg       0.88      0.86      0.86        50
+d)
+Accuracy: 0.86
+F1 Macro Average: 0.7453322661686566
+F1 Weighted Average: 0.8552446697347651
 Step 8:
 -------------------------------------------
-<class 'sklearn.naive_bayes.MultinomialNB'> with default parameters
-Average Accuracy: 0.58
-Average F1 Macro Average: 0.3907407407407407
-Average F1 Weighted Average: 0.5505555555555556
+<class 'sklearn.naive_bayes.MultinomialNB'>  with default parameter
+Average Accuracy: 0.62
+Average F1 Macro Average: 0.4497959183673469
+Average F1 Weighted Average: 0.5766530612244898
 Standard Deviation Accuracy: 0.0
 Standard Deviation F1 Macro Average: 0.0
 Standard Deviation F1 Weighted Average: 0.0
 -------------------------------------------
-<class 'sklearn.tree._classes.DecisionTreeClassifier'> with default parameters
-Average Accuracy: 0.98
-Average F1 Macro Average: 0.9873827791986359
-Average F1 Weighted Average: 0.9797612958226769
+<class 'sklearn.tree._classes.DecisionTreeClassifier'>  with default parameter
+Average Accuracy: 0.96
+Average F1 Macro Average: 0.9099999999999999
+Average F1 Weighted Average: 0.9590000000000001
 Standard Deviation Accuracy: 0.0
 Standard Deviation F1 Macro Average: 0.0
 Standard Deviation F1 Weighted Average: 0.0
 -------------------------------------------
-<class 'sklearn.linear_model._perceptron.Perceptron'> with default parameters
-Average Accuracy: 0.58
-Average F1 Macro Average: 0.25036764705882353
-Average F1 Weighted Average: 0.4470955882352942
+DecisionTreeClassifier  {'criterion': 'entropy', 'max_depth': 5, 'min_samples_split': 2}
+Average Accuracy: 0.96
+Average F1 Macro Average: 0.9099999999999999
+Average F1 Weighted Average: 0.9590000000000001
 Standard Deviation Accuracy: 0.0
 Standard Deviation F1 Macro Average: 0.0
 Standard Deviation F1 Weighted Average: 0.0
 -------------------------------------------
-<class 'sklearn.neural_network._multilayer_perceptron.MLPClassifier'> with default parameters
-Average Accuracy: 0.632
-Average F1 Macro Average: 0.3785628140659379
-Average F1 Weighted Average: 0.5711948261178531
-Standard Deviation Accuracy: 0.06679986693266853
-Standard Deviation F1 Macro Average: 0.06679986693266853
-Standard Deviation F1 Weighted Average: 0.06679986693266853
+<class 'sklearn.linear_model._perceptron.Perceptron'>  with default parameter
+Average Accuracy: 0.42
+Average F1 Macro Average: 0.24331306990881457
+Average F1 Weighted Average: 0.3746656534954407
+Standard Deviation Accuracy: 0.0
+Standard Deviation F1 Macro Average: 0.0
+Standard Deviation F1 Weighted Average: 0.0
+-------------------------------------------
+<class 'sklearn.neural_network._multilayer_perceptron.MLPClassifier'>  with default parameter
+Average Accuracy: 0.558
+Average F1 Macro Average: 0.298255760260715
+Average F1 Weighted Average: 0.4782857635989338
+Standard Deviation Accuracy: 0.07509993342207436
+Standard Deviation F1 Macro Average: 0.07509993342207436
+Standard Deviation F1 Weighted Average: 0.07509993342207436
+-------------------------------------------
+MLPClassifier  {'activation': 'tanh', 'hidden_layer_sizes': (50, 50), 'solver': 'adam'}
+Average Accuracy: 0.854
+Average F1 Macro Average: 0.7366248839749188
+Average F1 Weighted Average: 0.8448771173240975
+Standard Deviation Accuracy: 0.03405877273185281
+Standard Deviation F1 Macro Average: 0.03405877273185281
+Standard Deviation F1 Weighted Average: 0.03405877273185281

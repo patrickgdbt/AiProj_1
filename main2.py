@@ -1,3 +1,4 @@
+import warnings
 import statistics
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -7,6 +8,8 @@ from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, classifica
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import Perceptron
 from sklearn.neural_network import MLPClassifier
+from sklearn.model_selection import GridSearchCV
+warnings.filterwarnings("ignore")
 
 # Load the CSV into a Pandas Data Frame
 df = pd.read_csv('drug200.csv')
@@ -50,15 +53,41 @@ y = df2['Drug']
 x = df2.drop(['Drug'], axis=1)
 train_x, test_x, train_y, test_y = train_test_split(x, y)
 
-models = [ MultinomialNB(), DecisionTreeClassifier(), Perceptron(), MLPClassifier() ]
+tdt = DecisionTreeClassifier()
+decisionTreePGrid = {
+    'criterion': ['entropy', 'gini'],
+    'max_depth': [2, 5],
+    'min_samples_split': [2, 3, 5]
+}
+
+tmlp = MLPClassifier()
+mlpPGrid = {
+    'activation': ['logistic', 'tanh', 'relu', 'identity'],
+    'solver': ['adam', 'sgd'],
+    'hidden_layer_sizes': [(50, 50), (10, 10, 10)]
+}
+
+models = [MultinomialNB(), DecisionTreeClassifier(), GridSearchCV(tdt, decisionTreePGrid), Perceptron(), MLPClassifier(), GridSearchCV(tmlp, mlpPGrid)]
 
 f = open("drugs-performance.txt", "w")
 f.write("Step 7:\n")
 
+index = 0
 for model in models:
     f.write("--------------------------------------------\n")
-    f.write("a) "+str(type(model))+" with default parameters\n")
+    hyperParameters = ''
+    modelType = ''
     model.fit(train_x, train_y)
+    if index == 2:
+        hyperParameters = " " + str(model.best_params_) + "\n"
+        modelType = 'DecisionTreeClassifier'
+    elif index == 5:
+        hyperParameters = " " + str(model.best_params_) + "\n"
+        modelType = 'MLPClassifier'
+    else:
+        hyperParameters = " with default parameter\n"
+        modelType = str(type(model))
+    f.write("a) " + modelType + hyperParameters)
     predict = model.predict(test_x)
     cm = confusion_matrix(test_y, predict, labels=categories)
     f.write("b) Confusion Matrix:\n ")
@@ -73,7 +102,9 @@ for model in models:
     f.write("F1 Macro Average: " + str(f1Macro)+"\n")
     f1Weighted = f1_score(test_y, predict, average='weighted')
     f.write("F1 Weighted Average: " + str(f1Weighted)+"\n")
+    index += 1
 
+index = 0
 f.write("Step 8:\n")
 for model in models:
     accuracy = []
@@ -86,12 +117,22 @@ for model in models:
         f1Macro.append(f1_score(test_y, predict, average='macro'))
         f1Weighted.append(f1_score(test_y, predict, average='weighted'))
     f.write("-------------------------------------------\n")
-    f.write(str(type(model))+" with default parameters\n")
+    if index == 2:
+        hyperParameters = " " + str(model.best_params_) + "\n"
+        modelType = 'DecisionTreeClassifier'
+    elif index == 5:
+        hyperParameters = " " + str(model.best_params_) + "\n"
+        modelType = 'MLPClassifier'
+    else:
+        hyperParameters = " with default parameter\n"
+        modelType = str(type(model))
+    f.write(modelType + " " + hyperParameters)
     f.write("Average Accuracy: " + str(statistics.mean(accuracy))+"\n")
     f.write("Average F1 Macro Average: " + str(statistics.mean(f1Macro))+"\n")
     f.write("Average F1 Weighted Average: " + str(statistics.mean(f1Weighted))+"\n")
     f.write("Standard Deviation Accuracy: " + str(statistics.stdev(accuracy))+"\n")
     f.write("Standard Deviation F1 Macro Average: " + str(statistics.stdev(accuracy))+"\n")
     f.write("Standard Deviation F1 Weighted Average: " + str(statistics.stdev(accuracy))+"\n")
+    index += 1
 
 f.close()
