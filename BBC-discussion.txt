@@ -1,4 +1,5 @@
-a)
+a) The best metric to use in this scenario is the F_1 score. For one, the data is not balanced, this disqualifies accuracy from being a good metric.
+   Therefore, the best metric to use is the F_1 score, as it give equal weight to both the precision and recall of the articles.
 b) In question 8, the results are the same as in step 7. This makes sense because we did not change anything, and 
    a Naive Bayes classifier is simple statistics. If we do the same calculation, with the same numbers, we will 
    obtain the same result. In steps 9 and 10, we adjust the smoothing value, meaning that we change the probabilites
