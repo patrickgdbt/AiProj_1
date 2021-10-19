@@ -130,7 +130,6 @@ f.write("\n")
 
 entireCorpusWordTokens = businessWordTokens + entertainmentWordTokens + politicsWordTokens + sportWordTokens + techWordTokens
 
-
 f.write("(h): number of word tokens in entire corpus\n")
 f.write("Number of word tokens in corpus: " + str(entireCorpusWordTokens) + "\n")
 f.write("\n")
@@ -145,11 +144,16 @@ for i in range(5):
     indexedZeroCounts.append(zeroCount)
 
 f.write("(i): number and percentage of words with frequency 0 per class\n")
-f.write("Business: " + str(indexedZeroCounts[0]) + " " + str("{:.2%}".format(indexedZeroCounts[0]/len(vec.vocabulary_))) + "\n")
-f.write("Entertainment: " + str(indexedZeroCounts[1]) + " " + str("{:.2%}".format(indexedZeroCounts[1]/len(vec.vocabulary_))) + "\n")
-f.write("Politics: " + str(indexedZeroCounts[2]) + " " + str("{:.2%}".format(indexedZeroCounts[2]/len(vec.vocabulary_))) + "\n")
-f.write("Sport: " + str(indexedZeroCounts[3]) + " " + str("{:.2%}".format(indexedZeroCounts[3]/len(vec.vocabulary_))) + "\n")
-f.write("Tech: " + str(indexedZeroCounts[4]) + " " + str("{:.2%}".format(indexedZeroCounts[4]/len(vec.vocabulary_))) + "\n")
+f.write("Business: " + str(indexedZeroCounts[0]) + " " + str(
+    "{:.2%}".format(indexedZeroCounts[0] / len(vec.vocabulary_))) + "\n")
+f.write("Entertainment: " + str(indexedZeroCounts[1]) + " " + str(
+    "{:.2%}".format(indexedZeroCounts[1] / len(vec.vocabulary_))) + "\n")
+f.write("Politics: " + str(indexedZeroCounts[2]) + " " + str(
+    "{:.2%}".format(indexedZeroCounts[2] / len(vec.vocabulary_))) + "\n")
+f.write("Sport: " + str(indexedZeroCounts[3]) + " " + str(
+    "{:.2%}".format(indexedZeroCounts[3] / len(vec.vocabulary_))) + "\n")
+f.write("Tech: " + str(indexedZeroCounts[4]) + " " + str(
+    "{:.2%}".format(indexedZeroCounts[4] / len(vec.vocabulary_))) + "\n")
 f.write("\n")
 
 wordTokensCountAsArray = matrix.toarray()
@@ -159,7 +163,7 @@ for x in wordTokensCountAsArray.T:
         oneCount += 1
 
 f.write("(j): number and percentage of words with frequency of 1 in the entire corpus\n")
-f.write("Number: " + str(oneCount) + ", Percentage: " + str("{:.2%}".format(oneCount/len(vec.vocabulary_))) + "\n")
+f.write("Number: " + str(oneCount) + ", Percentage: " + str("{:.2%}".format(oneCount / len(vec.vocabulary_))) + "\n")
 f.write("\n")
 ##people = id 19740
 ##american = id 2334
@@ -168,10 +172,9 @@ peopleCount = wordTokensCountAsArray.T[19740].sum()
 americanCount = wordTokensCountAsArray.T[2334].sum()
 
 f.write("(k): log probability of 2 favourite words (people, american)\n")
-f.write("People: " + str(-math.log(peopleCount/vocabularySize)) + "\n")
-f.write("American: " + str(-math.log(americanCount/vocabularySize)) + "\n")
+f.write("People: " + str(-math.log(peopleCount / entireCorpusWordTokens)) + "\n")
+f.write("American: " + str(-math.log(americanCount / entireCorpusWordTokens)) + "\n")
 f.write("\n")
-
 
 f.write("\n\n\n###################################################################\n")
 f.write("               Multinomial default values, try 2\n")
@@ -262,7 +265,6 @@ f.write("\n")
 
 entireCorpusWordTokens = businessWordTokens + entertainmentWordTokens + politicsWordTokens + sportWordTokens + techWordTokens
 
-
 f.write("(h): number of word tokens in entire corpus\n")
 f.write("Number of word tokens in corpus: " + str(entireCorpusWordTokens) + "\n")
 f.write("\n")
@@ -277,11 +279,16 @@ for i in range(5):
     indexedZeroCounts.append(zeroCount)
 
 f.write("(i): number and percentage of words with frequency 0 per class\n")
-f.write("Business: " + str(indexedZeroCounts[0]) + " " + str("{:.2%}".format(indexedZeroCounts[0]/len(vec.vocabulary_))) + "\n")
-f.write("Entertainment: " + str(indexedZeroCounts[1]) + " " + str("{:.2%}".format(indexedZeroCounts[1]/len(vec.vocabulary_))) + "\n")
-f.write("Politics: " + str(indexedZeroCounts[2]) + " " + str("{:.2%}".format(indexedZeroCounts[2]/len(vec.vocabulary_))) + "\n")
-f.write("Sport: " + str(indexedZeroCounts[3]) + " " + str("{:.2%}".format(indexedZeroCounts[3]/len(vec.vocabulary_))) + "\n")
-f.write("Tech: " + str(indexedZeroCounts[4]) + " " + str("{:.2%}".format(indexedZeroCounts[4]/len(vec.vocabulary_))) + "\n")
+f.write("Business: " + str(indexedZeroCounts[0]) + " " + str(
+    "{:.2%}".format(indexedZeroCounts[0] / len(vec.vocabulary_))) + "\n")
+f.write("Entertainment: " + str(indexedZeroCounts[1]) + " " + str(
+    "{:.2%}".format(indexedZeroCounts[1] / len(vec.vocabulary_))) + "\n")
+f.write("Politics: " + str(indexedZeroCounts[2]) + " " + str(
+    "{:.2%}".format(indexedZeroCounts[2] / len(vec.vocabulary_))) + "\n")
+f.write("Sport: " + str(indexedZeroCounts[3]) + " " + str(
+    "{:.2%}".format(indexedZeroCounts[3] / len(vec.vocabulary_))) + "\n")
+f.write("Tech: " + str(indexedZeroCounts[4]) + " " + str(
+    "{:.2%}".format(indexedZeroCounts[4] / len(vec.vocabulary_))) + "\n")
 f.write("\n")
 
 wordTokensCountAsArray = matrix.toarray()
@@ -291,7 +298,7 @@ for x in wordTokensCountAsArray.T:
         oneCount += 1
 
 f.write("(j): number and percentage of words with frequency of 1 in the entire corpus\n")
-f.write("Number: " + str(oneCount) + ", Percentage: " + str("{:.2%}".format(oneCount/len(vec.vocabulary_))) + "\n")
+f.write("Number: " + str(oneCount) + ", Percentage: " + str("{:.2%}".format(oneCount / len(vec.vocabulary_))) + "\n")
 f.write("\n")
 
 ##people = id 19740
@@ -301,10 +308,9 @@ peopleCount = wordTokensCountAsArray.T[19740].sum()
 americanCount = wordTokensCountAsArray.T[2334].sum()
 
 f.write("(k): log probability of 2 favourite words (people, american)\n")
-f.write("People: " + str(-math.log(peopleCount/vocabularySize)) + "\n")
-f.write("American: " + str(-math.log(americanCount/vocabularySize)) + "\n")
+f.write("People: " + str(-math.log(peopleCount / entireCorpusWordTokens)) + "\n")
+f.write("American: " + str(-math.log(americanCount / entireCorpusWordTokens)) + "\n")
 f.write("\n")
-
 
 f.write("\n\n\n###################################################################\n")
 f.write("     Multinomial default values, try 3 with smoothing = 0.001\n")
@@ -409,11 +415,16 @@ for i in range(5):
     indexedZeroCounts.append(zeroCount)
 
 f.write("(i): number and percentage of words with frequency 0 per class\n")
-f.write("Business: " + str(indexedZeroCounts[0]) + " " + str("{:.2%}".format(indexedZeroCounts[0]/len(vec.vocabulary_))) + "\n")
-f.write("Entertainment: " + str(indexedZeroCounts[1]) + " " + str("{:.2%}".format(indexedZeroCounts[1]/len(vec.vocabulary_))) + "\n")
-f.write("Politics: " + str(indexedZeroCounts[2]) + " " + str("{:.2%}".format(indexedZeroCounts[2]/len(vec.vocabulary_))) + "\n")
-f.write("Sport: " + str(indexedZeroCounts[3]) + " " + str("{:.2%}".format(indexedZeroCounts[3]/len(vec.vocabulary_))) + "\n")
-f.write("Tech: " + str(indexedZeroCounts[4]) + " " + str("{:.2%}".format(indexedZeroCounts[4]/len(vec.vocabulary_))) + "\n")
+f.write("Business: " + str(indexedZeroCounts[0]) + " " + str(
+    "{:.2%}".format(indexedZeroCounts[0] / len(vec.vocabulary_))) + "\n")
+f.write("Entertainment: " + str(indexedZeroCounts[1]) + " " + str(
+    "{:.2%}".format(indexedZeroCounts[1] / len(vec.vocabulary_))) + "\n")
+f.write("Politics: " + str(indexedZeroCounts[2]) + " " + str(
+    "{:.2%}".format(indexedZeroCounts[2] / len(vec.vocabulary_))) + "\n")
+f.write("Sport: " + str(indexedZeroCounts[3]) + " " + str(
+    "{:.2%}".format(indexedZeroCounts[3] / len(vec.vocabulary_))) + "\n")
+f.write("Tech: " + str(indexedZeroCounts[4]) + " " + str(
+    "{:.2%}".format(indexedZeroCounts[4] / len(vec.vocabulary_))) + "\n")
 f.write("\n")
 
 wordTokensCountAsArray = matrix.toarray()
@@ -423,7 +434,7 @@ for x in wordTokensCountAsArray.T:
         oneCount += 1
 
 f.write("(j): number and percentage of words with frequency of 1 in the entire corpus\n")
-f.write("Number: " + str(oneCount) + ", Percentage: " + str("{:.2%}".format(oneCount/len(vec.vocabulary_))) + "\n")
+f.write("Number: " + str(oneCount) + ", Percentage: " + str("{:.2%}".format(oneCount / len(vec.vocabulary_))) + "\n")
 f.write("\n")
 
 ##people = id 19740
@@ -433,10 +444,9 @@ peopleCount = wordTokensCountAsArray.T[19740].sum()
 americanCount = wordTokensCountAsArray.T[2334].sum()
 
 f.write("(k): log probability of 2 favourite words (people, american)\n")
-f.write("People: " + str(-math.log(peopleCount/vocabularySize)) + "\n")
-f.write("American: " + str(-math.log(americanCount/vocabularySize)) + "\n")
+f.write("People: " + str(-math.log(peopleCount / entireCorpusWordTokens)) + "\n")
+f.write("American: " + str(-math.log(americanCount / entireCorpusWordTokens)) + "\n")
 f.write("\n")
-
 
 f.write("\n\n\n###################################################################\n")
 f.write("      Multinomial default values, try 4 with smoothing = 0.9\n")
@@ -541,11 +551,16 @@ for i in range(5):
     indexedZeroCounts.append(zeroCount)
 
 f.write("(i): number and percentage of words with frequency 0 per class\n")
-f.write("Business: " + str(indexedZeroCounts[0]) + " " + str("{:.2%}".format(indexedZeroCounts[0]/len(vec.vocabulary_))) + "\n")
-f.write("Entertainment: " + str(indexedZeroCounts[1]) + " " + str("{:.2%}".format(indexedZeroCounts[1]/len(vec.vocabulary_))) + "\n")
-f.write("Politics: " + str(indexedZeroCounts[2]) + " " + str("{:.2%}".format(indexedZeroCounts[2]/len(vec.vocabulary_))) + "\n")
-f.write("Sport: " + str(indexedZeroCounts[3]) + " " + str("{:.2%}".format(indexedZeroCounts[3]/len(vec.vocabulary_))) + "\n")
-f.write("Tech: " + str(indexedZeroCounts[4]) + " " + str("{:.2%}".format(indexedZeroCounts[4]/len(vec.vocabulary_))) + "\n")
+f.write("Business: " + str(indexedZeroCounts[0]) + " " + str(
+    "{:.2%}".format(indexedZeroCounts[0] / len(vec.vocabulary_))) + "\n")
+f.write("Entertainment: " + str(indexedZeroCounts[1]) + " " + str(
+    "{:.2%}".format(indexedZeroCounts[1] / len(vec.vocabulary_))) + "\n")
+f.write("Politics: " + str(indexedZeroCounts[2]) + " " + str(
+    "{:.2%}".format(indexedZeroCounts[2] / len(vec.vocabulary_))) + "\n")
+f.write("Sport: " + str(indexedZeroCounts[3]) + " " + str(
+    "{:.2%}".format(indexedZeroCounts[3] / len(vec.vocabulary_))) + "\n")
+f.write("Tech: " + str(indexedZeroCounts[4]) + " " + str(
+    "{:.2%}".format(indexedZeroCounts[4] / len(vec.vocabulary_))) + "\n")
 f.write("\n")
 
 wordTokensCountAsArray = matrix.toarray()
@@ -555,7 +570,7 @@ for x in wordTokensCountAsArray.T:
         oneCount += 1
 
 f.write("(j): number and percentage of words with frequency of 1 in the entire corpus\n")
-f.write("Number: " + str(oneCount) + ", Percentage: " + str("{:.2%}".format(oneCount/len(vec.vocabulary_))) + "\n")
+f.write("Number: " + str(oneCount) + ", Percentage: " + str("{:.2%}".format(oneCount / len(vec.vocabulary_))) + "\n")
 f.write("\n")
 
 ##people = id 19740
@@ -565,6 +580,6 @@ peopleCount = wordTokensCountAsArray.T[19740].sum()
 americanCount = wordTokensCountAsArray.T[2334].sum()
 
 f.write("(k): log probability of 2 favourite words (people, american)\n")
-f.write("People: " + str(-math.log(peopleCount/vocabularySize)) + "\n")
-f.write("American: " + str(-math.log(americanCount/vocabularySize)) + "\n")
+f.write("People: " + str(-math.log(peopleCount / entireCorpusWordTokens)) + "\n")
+f.write("American: " + str(-math.log(americanCount / entireCorpusWordTokens)) + "\n")
 f.write("\n")
